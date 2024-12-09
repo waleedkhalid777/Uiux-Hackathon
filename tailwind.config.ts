@@ -13,6 +13,12 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+
+    fontFamily: {
+      sans: ['Montserrat', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
+      serif: ['PT Serif', 'serif']
+    },
   },
   plugins: [],
 } satisfies Config;
