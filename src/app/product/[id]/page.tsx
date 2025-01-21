@@ -68,7 +68,7 @@ const ProductDetails = ({ product }: ProductPageProps) => {
   );
 };
 
-// Fetch product data directly in the component
+// ProductDetailsPage component with dynamic route params
 const ProductDetailsPage = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
 
