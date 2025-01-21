@@ -17,7 +17,6 @@ type ProductPageProps = {
   product: Product | null;
 };
 
-
 const ProductDetails = ({ product }: ProductPageProps) => {
   if (!product) {
     return <p>Product not found.</p>;
@@ -69,7 +68,7 @@ const ProductDetails = ({ product }: ProductPageProps) => {
   );
 };
 
-
+// Fetch product data directly in the component
 const ProductDetailsPage = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
 
@@ -93,7 +92,6 @@ const ProductDetailsPage = async ({ params }: { params: { id: string } }) => {
       return <p>No product found for this ID.</p>;
     }
 
-    
     return <ProductDetails product={data[0]} />;
   } catch (error) {
     console.error("Error fetching product data:", error);
