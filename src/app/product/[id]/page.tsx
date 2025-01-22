@@ -14,7 +14,6 @@ type Product = {
   isNew?: boolean;
 };
 
-// Fetch product data for the given ID
 async function fetchProduct(id: string): Promise<Product | null> {
   try {
     const data = await Client.fetch(
@@ -38,11 +37,7 @@ async function fetchProduct(id: string): Promise<Product | null> {
   }
 }
 
-type ProductPageProps = {
-  params: { id: string };
-};
-
-const ProductDetails = async ({ params }: ProductPageProps) => {
+const ProductDetails = async ({ params }: { params: { id: string } }) => {
   const product = await fetchProduct(params.id);
 
   if (!product) {
@@ -61,7 +56,7 @@ const ProductDetails = async ({ params }: ProductPageProps) => {
               width={400}
               height={400}
               className="w-full max-w-sm h-auto object-cover rounded-md shadow-md"
-              unoptimized // Use this to skip Next.js optimization for external images
+              unoptimized
             />
           ) : (
             <Image
